@@ -49,17 +49,17 @@ const Signup = () => {
               </h1>
 
               <div className="form-group flex flex-col">
-                  <label htmlFor="name " className="block text-semibold text-gray-400">Full Name</label>
+                  <label htmlFor="name " className="block text-semibold "><strong>Full Name</strong></label>
                   <input name="name"  type="text" placeholder="" className="block border-b-2 border-black pb-2 focus:outline-none" value={formData.name}  onChange={handleChange} />
               </div>
 
               <div className="form-group flex flex-col">
-                  <label htmlFor="email " className="block text-semibold text-gray-400">Email</label>
+                  <label htmlFor="email " className="block text-semibold "><strong>Email</strong></label>
                   <input name="email"  type="email" placeholder="" className="block border-b-2 border-black pb-2 focus:outline-none" value={formData.email}  onChange={handleChange} />
               </div>
 
               <div className="form-group flex flex-col">
-                  <label htmlFor="password " className="block text-semibold text-gray-400">Password</label>
+                  <label htmlFor="password " className="block text-semibold "><strong>Password</strong></label>
                   <input name="password" type="password" placeholder="" className="block border-b-2 border-black pb-2 focus:outline-none" value={formData.password} onChange={handleChange} />
               </div>
               {/* { isSignUp ? <div className="subheading">

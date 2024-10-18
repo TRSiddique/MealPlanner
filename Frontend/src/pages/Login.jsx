@@ -68,7 +68,7 @@ const Login = () => {
             Already have an account? <NavLink to="/" className="text-blue-500">Login</NavLink>
           </div> :  */}
               <div className="subheading">
-                  Dont have an account?
+                  Don't have an account?
                   <NavLink to="/Signup" className="text-blue-500"> SignUp</NavLink>
               </div>
               <button type="submit" className="bg-black py-2 text-white font-bold"

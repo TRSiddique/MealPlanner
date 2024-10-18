@@ -7,6 +7,8 @@ import Recipes from './pages/Recipes'
 import Planner from './pages/Planner'
 import Tracker from './pages/Tracker'
 import Notification from './pages/Notification'
+import Plannernew from './pages/Plannernew'
+import BMI from './pages/BMI'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Header from './components/Header/Header'
@@ -27,6 +29,8 @@ function App() {
        <Route path="/meal-planner" element={<Planner />} />
        <Route path="/meal-tracker" element={<Tracker />} />
        <Route path="/notification" element={<Notification />} />
+       <Route path="/plannernew" element={<Plannernew />} />
+       <Route path="/BMI" element={<BMI />} />
       </Routes>
     </BrowserRouter>
   )

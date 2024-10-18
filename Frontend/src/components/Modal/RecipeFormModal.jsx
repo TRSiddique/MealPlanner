@@ -40,17 +40,7 @@ const RecipeFormModal = ({ setshowForm } ) => {
                     </label>
                     <input type="text" name="ingredients" id="recipe_name" className="border-2 rounded-md p-3 w-full focus:outline-none" placeholder="Enter list of ingredients" value={formData.ingredients} onChange={updateFormData} />
                   </div>
-                  <div className="form-group flex flex-col gap-2">
-                    <label htmlFor="rating" className="font-semibold">
-                        Rating
-                    </label>
-                    <section className="flex items-center gap-5">
-                        <input type="range" draggable  name="rating" id="rating" min={1} max={5} value={formData.rating} className="border-2 rounded-md p-3 w-full focus:outline-none" placeholder="Enter rating" onChange={updateFormData} />
-                        <span className="text-xl font-semibold">
-                            { formData.rating }
-                        </span>
-                    </section>
-                  </div>
+                  
                   <div className="form-group flex flex-col gap-2">
                     <label htmlFor="img_src" className="font-semibold">
                         Image

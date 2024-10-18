@@ -1,22 +1,55 @@
-import { NavLink } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
+import { Alert } from 'react-bootstrap';
+import { NavLink } from "react-router-dom";
 
-const Notification = () => {
+function Notification() {
+  const [notification, setNotification] = useState({
+    show: true,
+    variant: 'danger',
+    heading: 'Hey, nice to see you!',
+    message: 'Welcome to our website! Check out our latest updates.',
+    link: '/updates' // Assuming you have a route to handle '/updates'
+  });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setNotification({
+        show: true,
+        variant: 'success',
+        heading: 'New Feature!',
+        message: 'Try our new meal planning tool today.',
+        link: '/meal-planning'
+      });
+    }, 2000);
+
+    const secondTimer = setTimeout(() => {
+      setNotification({
+        show: true,
+        variant: 'info',
+        heading: 'Weekly Recipe Picks!',
+        message: 'Discover this week’s top recipes for healthy eating.',
+        link: '/recipes'
+      });
+    }, 4000);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(secondTimer);
+    };
+  }, []);
+
   return (
-    <div className="text-white font-bold grid min-w-screen min-h-screen overflow-hidden place-content-center text-5xl bg-[url('https://image.slidesdocs.com/responsive-images/slides/0-simple-contrast-color-good-morning-dream-work-report-powerpoint-background_ca826c90af__960_540.jpg')] bg-no-repeat bg-stretch object-fill bg-center bg-cover">
-      <p className="animate-bounce">
-    
-      <p className="text-7xl font-bold">
-      Here we will share <br /> motivational quotes <span className="p-2 bg-light-green">on diet plan</span>
+    <>
+      {notification.show && (
+        <Alert variant={notification.variant} onClose={() => setNotification(prev => ({ ...prev, show: false }))} dismissible>
+          <Alert.Heading>{notification.heading}</Alert.Heading>
+          <p>
+            {notification.message} <NavLink to={notification.link}>Click here</NavLink>
           </p>
-      </p>
-      <NavLink to="/" className="flex-center pt-10">
-        <button className="text-xl bg-gray-200 mt-10 rounded-full px-10 py-3 text-black mx-auto cursor-pointer hover:scale-110 duration-300">
-          Home
-        </button>
-      </NavLink>
-    </div>
-   
-  )
+        </Alert>
+      )}
+    </>
+  );
 }
 
-export default Notification
+export default Notification;
